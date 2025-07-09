@@ -1,0 +1,13 @@
+name: Github Action Demo
+on: [push]
+jobs:
+  Initialization:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "The ${{ github.repository }} repository has been cloned"
+      - name: List files in the repository
+      - run: |
+        ls ${{ github.workspace }}
+      - run: echo " This job's status is ${{ job.status }}."
